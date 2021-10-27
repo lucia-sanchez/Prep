@@ -1,0 +1,26 @@
+       body{
+           text-align: center;
+           background-image: url(https://previews.123rf.com/images/seamartini/seamartini1602/seamartini160200149/52089259-utensilios-de-cocina-y-utensilios-iconos-con-ollas-cucharas-y-cuchillos-tenedores-taza-y-juego-de-t%C3%A9.jpg);
+       }
+       h1{
+           color:rgb(158, 27, 27)
+       }
+       img{
+           width: 350px;
+           
+       }
+       #thirdDiv {
+           vertical-align: middle;
+           height: 600px;
+           width: 500px;
+           background-color: darkred;
+           padding: 50px;
+           border: 14px black outset;
+        
+           
+       }
+       #spanId {
+           font-size: 25px;
+           margin: 50px;
+       }
+ 
