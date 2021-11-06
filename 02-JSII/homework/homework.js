@@ -127,15 +127,18 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   // Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-NewArray = []
+var NewArray = []
 
-for (let i = 0; i < array.length; i++) {
-  if (array[i] === Marzo || array[i] === Noviembre) {
-    NewArray= NewArray.push (array[i])
+for (var i = 0; i < array.length; i++) {
+  if (array[i] === 'Enero'|| array[i] === 'Marzo' || array[i] === 'Noviembre') {
+    NewArray.push(array[i])
   } 
-  return NewArray
 }
+
+if (NewArray.length <3) {
 return "No se encontraron los meses pedidos"
+}
+return NewArray;
 }
 
 function breakStatement(numero) {
@@ -147,6 +150,18 @@ function breakStatement(numero) {
   // Pista: usá el statement 'break'
   // Tu código:
 
+var NewArray = [];
+
+for (var i = 0; i < 10; i++) {
+numero = numero + 2;
+if (i === numero) break
+NewArray.push (numero)
+
+}
+if (i< 10) {
+return "Se interrumpió la ejecución"
+}
+return NewArray
 }
 
 function continueStatement(numero) {
@@ -157,7 +172,17 @@ function continueStatement(numero) {
   // y se continua con la siguiente iteración
   // Pista: usá el statement 'continue'
   // Tu código:
-  
+
+var arregloNuevo = [];
+var suma = numero
+for (var i = 0; i < 10; i++) {
+  suma = suma + 2;
+
+if (i === 5) continue;
+arregloNuevo.push(suma) 
+
+}
+return arregloNuevo
 }
 
 function crearGato(nombre, edad) {
@@ -167,14 +192,27 @@ function crearGato(nombre, edad) {
   // Devuelve el objeto
   // Tu código:
 
+  var gato = {
+     nombre : nombre,
+     edad : edad,
+     meow : function (){
+      return "Meow!";
+     }
+    };
+
+   return gato;
 }
 
 function agregarPropiedad(objeto, property) {
   // Agrega una propiedad al objeto (argumento "objeto") con el valor `null`
   // Devuelve el objeto
-  // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
+  // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del 
+  //argumento llamado "property" (una cadena/string)
   // Tu código:
 
+ objeto[property] = null;
+
+  return objeto;
 }
 
 function invocarMetodo(objeto, metodo) {
@@ -183,6 +221,7 @@ function invocarMetodo(objeto, metodo) {
   // Nada necesita ser devuelto ("returned")
   // Tu código:
   
+  objeto[metodo]()
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
@@ -190,6 +229,13 @@ function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
 
+
+
+
+
+return objetoMisterioso.numeroMisterioso *5;
+
+ 
 }
 
 function eliminarPropiedad(objeto, unaPropiedad) {
@@ -197,6 +243,9 @@ function eliminarPropiedad(objeto, unaPropiedad) {
   // tip: tenes que usar bracket notation
   // Devuelve el objeto
   // Tu código:
+
+  delete objeto[unaPropiedad];
+  return objeto
 }
 
 function nuevoUsuario(nombre, email, password) {
@@ -204,6 +253,12 @@ function nuevoUsuario(nombre, email, password) {
   // Devuelve el objeto
   // Tu código:
 
+  nuevoUsuario = {
+    nombre : nombre,
+    email : email,
+    password : password,
+  };
+  return nuevoUsuario;
 }
 
 function tieneEmail(usuario) {
@@ -211,6 +266,11 @@ function tieneEmail(usuario) {
   // De lo contratio, devuelve "false"
   // Tu código:
 
+
+  if (usuario.email === undefined || usuario.email === null) {
+    return false
+  }
+    return true
 }
 
 function tienePropiedad(objeto, propiedad) {
@@ -219,7 +279,12 @@ function tienePropiedad(objeto, propiedad) {
   // De lo contrario, devuelve "false"
   // Tu código:
 
+  if (objeto['propiedad'] !== undefined || objeto['propiedad'] !== null) {
+    return true
+  }
+    return false
 }
+
 
 function actualizarPassword(usuario, nuevaPassword) {
   // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevaPassword"
